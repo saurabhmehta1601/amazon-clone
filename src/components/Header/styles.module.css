@@ -1,6 +1,6 @@
 .header {
   color: rgb(230, 225, 225);
-  padding: 0.25em;
+  padding: 0 1em;
   background-color: var(--bg-dark);
   height: 4rem;
   position: sticky;
@@ -10,17 +10,43 @@
   z-index: 100;
 }
 
-.headerLogo {
-}
-
 .headerNav {
   display: flex;
-  column-gap: 1em;
-  margin-left: auto;
+  justify-content: space-evenly;
   margin-right: 1em;
+}
+
+.headerSearch {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  margin: 1em;
+  border-radius: 12px;
+}
+.headerSearchInput {
+  flex: 1;
+  padding: 0.25em;
+}
+.headerSearchIcon {
+  background-color: rgb(204, 144, 88);
+  color: rgb(39, 38, 38);
+  padding: 0.25em;
 }
 
 .headerOption {
   display: flex;
   flex-direction: column;
+  padding: 0 0.5em;
+}
+.headerOptionLineOne {
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+  opacity: 0.64;
+}
+
+.headerOptionLineTwo {
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.8px;
+  word-spacing: 1px;
 }

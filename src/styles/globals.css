@@ -4,3 +4,7 @@
 :root {
   --bg-dark: #131921;
 }
+
+body {
+  font-family: Roboto, "Segoe UI";
+}
