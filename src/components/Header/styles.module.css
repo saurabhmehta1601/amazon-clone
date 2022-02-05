@@ -1,6 +1,26 @@
 .header {
+  color: rgb(230, 225, 225);
+  padding: 0.25em;
+  background-color: var(--bg-dark);
+  height: 4rem;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 100;
 }
 
 .headerLogo {
-  color: red;
+}
+
+.headerNav {
+  display: flex;
+  column-gap: 1em;
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.headerOption {
+  display: flex;
+  flex-direction: column;
 }
