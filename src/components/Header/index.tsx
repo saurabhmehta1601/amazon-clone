@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 
 const Header = () => {
   return (
@@ -32,6 +33,10 @@ const Header = () => {
         <div className={styles.headerOption}>
           <span className={styles.headerOptionLineOne}>Your</span>
           <span className={styles.headerOptionLineTwo}>Prime</span>
+        </div>
+        <div className={styles.headerOptionBasket}>
+          <ShoppingBasketIcon className={styles.headerBasketIcon} />
+          <span className={styles.headerBasketCount}>0</span>
         </div>
       </div>
     </div>
