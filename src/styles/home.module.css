@@ -1,6 +1,18 @@
 .heroImg {
   width: 100%;
-  margin-bottom: -150px;
+  margin-bottom: -250px;
   z-index: -1;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.productsContainer {
+  padding: 2em;
+  margin: 0 1em;
+}
+
+.productRow {
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 1em;
+  margin: 1em;
 }

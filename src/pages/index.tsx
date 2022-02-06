@@ -1,5 +1,5 @@
 import styles from "../styles/home.module.css";
-import Image from "next/image";
+import Product from "../components/Product";
 
 export default function Home() {
   return (
@@ -10,6 +10,50 @@ export default function Home() {
           className={styles.heroImg}
           alt="img-banner"
         />
+      </div>
+      <div className={styles.productsContainer}>
+        <div className={styles.productRow}>
+          <Product
+            rating={4}
+            title="HP Pavilion Full touch 512SSD 16GB RAM "
+            price="22"
+            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+          />
+          <Product
+            rating={2}
+            title="SAMSUNG Galaxy s5"
+            price="22"
+            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+          />
+        </div>
+        <div className={styles.productRow}>
+          <Product
+            rating={3}
+            title="SAMSUNG Galaxy s5"
+            price="22"
+            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+          />
+          <Product
+            rating={1}
+            title="SAMSUNG Galaxy s5"
+            price="22"
+            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+          />
+          <Product
+            rating={5}
+            title="SAMSUNG Galaxy s5"
+            price="22"
+            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+          />
+        </div>
+        <div className={styles.productRow}>
+          <Product
+            rating={3}
+            title="SAMSUNG Galaxy s5"
+            price="22"
+            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+          />
+        </div>
       </div>
     </div>
   );
