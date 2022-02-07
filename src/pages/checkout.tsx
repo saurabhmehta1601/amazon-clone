@@ -10,8 +10,8 @@ const Checkout = () => {
           src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
           alt="checkout-add"
         />
-        <div>
-          <h2 className={styles.checkoutTitle}>Your Cart </h2>
+        <div className={styles.checkoutTitle}>
+          <h2>Your Shopping Basket</h2>
         </div>
       </div>
       <div className={styles.right}>
