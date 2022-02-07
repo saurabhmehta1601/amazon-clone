@@ -3,13 +3,22 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+  const navigateToCheckout = () => {
+    router.push("/checkout");
+  };
+  const navigateToHome = () => {
+    router.push("/");
+  };
   return (
     <div className={styles.header}>
       {/* Logo */}
       <Image
         className={styles.headerLogo}
+        onClick={navigateToHome}
         src="/logo.svg"
         alt="amazon-logo"
         height="35"
@@ -34,7 +43,7 @@ const Header = () => {
           <span className={styles.headerOptionLineOne}>Your</span>
           <span className={styles.headerOptionLineTwo}>Prime</span>
         </div>
-        <div className={styles.headerOptionBasket}>
+        <div className={styles.headerOptionBasket} onClick={navigateToCheckout}>
           <ShoppingBasketIcon className={styles.headerBasketIcon} />
           <span className={styles.headerBasketCount}>0</span>
         </div>

@@ -13,7 +13,7 @@ const Product = ({ title, price, image, rating }) => {
         <div className={styles.productRating}>
           {Array(rating)
             .fill(undefined)
-            .map((_item, idx) => (
+            .map((_, idx) => (
               <span key={idx}>⭐</span>
             ))}
         </div>

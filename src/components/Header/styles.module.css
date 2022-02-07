@@ -10,6 +10,10 @@
   z-index: 100;
 }
 
+.headerLogo:hover {
+  cursor: pointer;
+}
+
 .headerNav {
   display: flex;
   justify-content: space-evenly;
@@ -65,4 +69,7 @@
   vertical-align: baseline;
   position: relative;
   top: 0.1em;
+}
+.headerOptionBasket:hover {
+  cursor: pointer;
 }
