@@ -3,46 +3,14 @@
   background-color: #fff;
   padding: 1em;
 }
-
 .checkoutAd {
   width: 100%;
   margin-bottom: 0.2em;
-}
-.checkoutTotal {
-  background-color: #ddd;
-  min-width: 350px;
-  border-radius: 2px;
-  border: 1px solid;
-  border-color: rgb(202, 202, 202);
-  padding: 1em;
-}
-.checkoutForm {
-  padding: 0.5em;
-}
-.checkoutForm > input {
-  margin-right: 4px;
-  position: relative;
-  top: 1px;
-}
-.checkoutForm > label {
-  font-size: 0.9rem;
-}
-.checkoutForm > button {
-  display: block;
-  width: 80%;
-  margin: 2.5em auto 0.3em;
-  text-align: center;
-  padding: 0.1em 1em;
-  background-color: #f0c14b;
-  padding: 0.2em;
-  border: 1px solid;
-  border-color: #a88734 #9c7e31 #846a29;
-  color: #111;
 }
 .checkoutTitle {
   padding: 1em;
 }
 .checkoutTitle > h2 {
   border-bottom: 1px solid lightgray;
-  padding-bottom: 0.2em;
+  padding-bottom: 0.34em;
 }
