@@ -12,8 +12,10 @@ const Subtotal = () => {
               Subtotal (2 items): <strong> {value}</strong>
             </p>
             <form className={styles.checkoutForm}>
-              <input type="checkbox" name="containsGift" />
-              <label htmlFor="">This order contains a gift</label>
+              <div className={styles.formControl}>
+                <input type="checkbox" name="containsGift" />
+                <label htmlFor="">This order contains a gift</label>
+              </div>
               <button type="submit">Proceed to checkout</button>
             </form>
           </>
