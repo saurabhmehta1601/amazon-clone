@@ -1,7 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styles from "./styles.module.css";
+import { addToCart } from "../../redux/features/ShoppingCart/cartSlice";
 
-const Product = ({ title, price, image, rating }) => {
+const Product = ({ id, title, price, image_url, rating }) => {
+  const dispatch = useDispatch();
+  const addProductToCart = () => {
+    dispatch(addToCart({ id, title, price, image_url, rating }));
+  };
   return (
     <div className={styles.product}>
       <div className={styles.productInfo}>
@@ -18,8 +24,8 @@ const Product = ({ title, price, image, rating }) => {
             ))}
         </div>
       </div>
-      <img src={image} alt={title} />
-      <button>Add to Cart</button>
+      <img src={image_url} alt={title} />
+      <button onClick={addProductToCart}>Add to Cart</button>
     </div>
   );
 };

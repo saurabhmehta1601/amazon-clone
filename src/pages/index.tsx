@@ -14,44 +14,50 @@ export default function Home() {
       <div className={styles.productsContainer}>
         <div className={styles.productRow}>
           <Product
+            id="12341"
             rating={4}
             title="HP Pavilion Full touch 512SSD 16GB RAM "
             price="22"
-            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+            image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
           <Product
+            id="12341"
             rating={2}
             title="SAMSUNG Galaxy s5"
             price="22"
-            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+            image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
         </div>
         <div className={styles.productRow}>
           <Product
+            id="12341"
             rating={3}
             title="SAMSUNG Galaxy s5"
             price="22"
-            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+            image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
           <Product
+            id="12341"
             rating={1}
             title="SAMSUNG Galaxy s5"
             price="22"
-            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+            image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
           <Product
+            id="12341"
             rating={5}
             title="SAMSUNG Galaxy s5"
             price="22"
-            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+            image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
         </div>
         <div className={styles.productRow}>
           <Product
+            id="12341"
             rating={3}
             title="SAMSUNG Galaxy s5"
             price="22"
-            image="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+            image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
         </div>
       </div>

@@ -3,11 +3,11 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { useAppSelector } from "../../hooks/redux";
 
 const Header = () => {
-  const router = useRouter();
+  const cart = useAppSelector((state) => state.cart);
   return (
     <div className={styles.header}>
       {/* Logo */}
@@ -42,7 +42,9 @@ const Header = () => {
         <Link href="/checkout">
           <div className={styles.headerOptionBasket}>
             <ShoppingBasketIcon className={styles.headerBasketIcon} />
-            <span className={styles.headerBasketCount}>0</span>
+            <span className={styles.headerBasketCount}>
+              {cart.products.length}
+            </span>
           </div>
         </Link>
       </div>
