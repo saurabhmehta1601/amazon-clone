@@ -1,8 +1,11 @@
 import React from "react";
 import styles from "../styles/checkout.module.css";
 import Subtotal from "../components/Subtotal";
+import { useAppSelector } from "../hooks/redux";
+import CartItem from "../components/CartItem";
 
 const Checkout = () => {
+  const cart = useAppSelector((state) => state.cart);
   return (
     <div className={styles.checkout}>
       <div className={styles.left}>
@@ -13,6 +16,17 @@ const Checkout = () => {
         />
         <div className={styles.checkoutTitle}>
           <h2>Your Shopping Basket</h2>
+          <div className={styles.cartItemsList}>
+            {cart.products.map((item) => (
+              <CartItem
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                rating={item.rating}
+                image_url={item.image_url}
+              />
+            ))}
+          </div>
         </div>
       </div>
       <div className={styles.right}>

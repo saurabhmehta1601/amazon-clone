@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import styles from "./styles.module.css";
 import { addToCart } from "../../redux/features/ShoppingCart/cartSlice";
 
-interface IProps {
+export interface IProduct {
   id: string;
   title: string;
   price: number;
@@ -11,7 +11,7 @@ interface IProps {
   rating: number;
 }
 
-const Product = ({ id, title, price, image_url, rating }: IProps) => {
+const Product = ({ id, title, price, image_url, rating }: IProduct) => {
   const dispatch = useDispatch();
   const addProductToCart = () => {
     dispatch(addToCart({ id, title, price, image_url, rating }));
