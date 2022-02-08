@@ -1,4 +1,5 @@
 import React from "react";
+import CurrencyFormat from "react-currency-format";
 import styles from "../styles/checkout.module.css";
 
 const Checkout = () => {
@@ -16,14 +17,24 @@ const Checkout = () => {
       </div>
       <div className={styles.right}>
         <div className={styles.checkoutTotal}>
-          <p className={styles.subtotalTitle}>
-            Subtotal (2 items): <strong>$250.96</strong>
-          </p>
-          <form className={styles.checkoutForm}>
-            <input type="checkbox" name="containsGift" />
-            <label htmlFor="">This order contains a gift</label>
-            <button type="submit">Proceed to checkout</button>
-          </form>
+          <CurrencyFormat
+            renderText={(value) => (
+              <>
+                <p className={styles.subtotalTitle}>
+                  Subtotal (2 items): <strong> {value}</strong>
+                </p>
+                <form className={styles.checkoutForm}>
+                  <input type="checkbox" name="containsGift" />
+                  <label htmlFor="">This order contains a gift</label>
+                  <button type="submit">Proceed to checkout</button>
+                </form>
+              </>
+            )}
+            value={2350.96}
+            displayType="text"
+            thousandSeparator={true}
+            prefix="$"
+          />
         </div>
       </div>
     </div>
