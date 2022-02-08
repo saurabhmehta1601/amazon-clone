@@ -17,14 +17,14 @@ export default function Home() {
             id="12341"
             rating={4}
             title="HP Pavilion Full touch 512SSD 16GB RAM "
-            price="22"
+            price={25}
             image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
           <Product
             id="12341"
             rating={2}
             title="SAMSUNG Galaxy s5"
-            price="22"
+            price={10}
             image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
         </div>
@@ -33,21 +33,21 @@ export default function Home() {
             id="12341"
             rating={3}
             title="SAMSUNG Galaxy s5"
-            price="22"
+            price={2}
             image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
           <Product
             id="12341"
             rating={1}
             title="SAMSUNG Galaxy s5"
-            price="22"
+            price={12}
             image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
           <Product
             id="12341"
             rating={5}
             title="SAMSUNG Galaxy s5"
-            price="22"
+            price={22}
             image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
         </div>
@@ -56,7 +56,7 @@ export default function Home() {
             id="12341"
             rating={3}
             title="SAMSUNG Galaxy s5"
-            price="22"
+            price={22}
             image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
           />
         </div>

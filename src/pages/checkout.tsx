@@ -1,5 +1,4 @@
 import React from "react";
-import CurrencyFormat from "react-currency-format";
 import styles from "../styles/checkout.module.css";
 import Subtotal from "../components/Subtotal";
 

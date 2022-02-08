@@ -1,15 +1,17 @@
 import React from "react";
 import CurrencyFormat from "react-currency-format";
+import { useAppSelector } from "../../hooks/redux";
 import styles from "./styles.module.css";
 
 const Subtotal = () => {
+  const cart = useAppSelector((state) => state.cart);
   return (
     <div className={styles.checkoutTotal}>
       <CurrencyFormat
         renderText={(value) => (
           <>
             <p className={styles.subtotalTitle}>
-              Subtotal (2 items): <strong> {value}</strong>
+              Subtotal ({cart.products.length} items): <strong> {value}</strong>
             </p>
             <form className={styles.checkoutForm}>
               <div className={styles.formControl}>
@@ -20,7 +22,7 @@ const Subtotal = () => {
             </form>
           </>
         )}
-        value={2350.96}
+        value={cart.products.reduce((acc, item) => acc + item.price, 0)}
         displayType="text"
         thousandSeparator={true}
         prefix="$"
