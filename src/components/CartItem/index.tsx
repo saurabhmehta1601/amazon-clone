@@ -14,7 +14,7 @@ const CartItem = ({ id, title, price, image_url, rating }: IProduct) => {
     <div className={styles.product}>
       <img src={image_url} alt={title} />
       <div className={styles.info}>
-        <h5>{title}</h5>
+        <h5 className={styles.productTitle}>{title}</h5>
         <p>
           <small>$</small>
           {price}
