@@ -20,6 +20,7 @@ const Checkout = () => {
             {cart.products.map((item) => (
               <CartItem
                 id={item.id}
+                key={item.id}
                 title={item.title}
                 price={item.price}
                 rating={item.rating}

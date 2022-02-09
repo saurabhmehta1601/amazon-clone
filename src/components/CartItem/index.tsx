@@ -1,8 +1,15 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { IProduct } from "../Product";
+import ThemeButton from "../ThemeButton";
+import { useAppDispatch } from "../../hooks/redux";
+import { removeFromCart } from "../../redux/features/ShoppingCart/cartSlice";
 
 const CartItem = ({ id, title, price, image_url, rating }: IProduct) => {
+  const dispatch = useAppDispatch();
+  const removeItemFromCart = () => {
+    dispatch(removeFromCart(id));
+  };
   return (
     <div className={styles.product}>
       <img src={image_url} alt={title} />
@@ -16,8 +23,13 @@ const CartItem = ({ id, title, price, image_url, rating }: IProduct) => {
           {Array(rating)
             .fill(undefined)
             .map((_, idx) => {
-              return <>⭐</>;
+              return <span key={idx}>⭐</span>;
             })}
+        </div>
+        <div className={styles.removeBtnContainer}>
+          <ThemeButton onClick={removeItemFromCart} type="button">
+            Remove from cart
+          </ThemeButton>
         </div>
       </div>
     </div>

@@ -3,23 +3,29 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import Link from "next/link";
 import { useAppSelector } from "../../hooks/redux";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+  const navigateToCheckout = () => {
+    router.push("/checkout");
+  };
+  const navigateToHome = () => {
+    router.push("/");
+  };
   const cart = useAppSelector((state) => state.cart);
   return (
     <div className={styles.header}>
       {/* Logo */}
-      <Link href="/">
-        <Image
-          className={styles.headerLogo}
-          src="/logo.svg"
-          alt="amazon-logo"
-          height="35"
-          width="35"
-        />
-      </Link>
+      <Image
+        onClick={navigateToHome}
+        className={styles.headerLogo}
+        src="/logo.svg"
+        alt="amazon-logo"
+        height="35"
+        width="35"
+      />
       {/* Search */}
       <div className={styles.headerSearch}>
         <input className={styles.headerSearchInput} type="text" />
@@ -39,14 +45,12 @@ const Header = () => {
           <span className={styles.headerOptionLineOne}>Your</span>
           <span className={styles.headerOptionLineTwo}>Prime</span>
         </div>
-        <Link href="/checkout">
-          <div className={styles.headerOptionBasket}>
-            <ShoppingBasketIcon className={styles.headerBasketIcon} />
-            <span className={styles.headerBasketCount}>
-              {cart.products.length}
-            </span>
-          </div>
-        </Link>
+        <div className={styles.headerOptionBasket} onClick={navigateToCheckout}>
+          <ShoppingBasketIcon className={styles.headerBasketIcon} />
+          <span className={styles.headerBasketCount}>
+            {cart.products.length}
+          </span>
+        </div>
       </div>
     </div>
   );

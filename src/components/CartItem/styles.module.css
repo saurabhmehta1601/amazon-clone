@@ -1,0 +1,15 @@
+.product {
+  display: flex;
+  margin: 1em 0;
+}
+.product > img {
+  max-height: 200px;
+}
+
+.info {
+  padding: 1em 2em;
+}
+.removeBtnContainer {
+  margin-top: 3em;
+  width: fit-content;
+}
