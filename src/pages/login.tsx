@@ -9,7 +9,7 @@ const Login = () => {
     <div className={styles.layout}>
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/263px-Amazon_logo.svg.png"
-        alt=""
+        alt="amazon-logo"
       />
       <div className={styles.container}>
         <h2>Sign In</h2>
