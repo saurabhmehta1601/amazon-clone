@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
-import SearchSharpIcon from "@mui/icons-material/SearchSharp";
-import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { useAppSelector } from "../../hooks/redux";
 import { useRouter } from "next/router";
 
@@ -29,7 +28,7 @@ const Header = () => {
       {/* Search */}
       <div className={styles.headerSearch}>
         <input className={styles.headerSearchInput} type="text" />
-        <SearchSharpIcon className={styles.headerSearchIcon} />
+        <FaSearch className={styles.headerSearchIcon} />
       </div>
       {/* Navigation */}
       <div className={styles.headerNav}>
@@ -46,7 +45,7 @@ const Header = () => {
           <span className={styles.headerOptionLineTwo}>Prime</span>
         </div>
         <div className={styles.headerOptionBasket} onClick={navigateToCheckout}>
-          <ShoppingBasketIcon className={styles.headerBasketIcon} />
+          <FaShoppingCart className={styles.headerBasketIcon} />
           <span className={styles.headerBasketCount}>
             {cart.products.length}
           </span>

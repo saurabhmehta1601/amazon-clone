@@ -34,7 +34,7 @@
 .headerSearchIcon {
   background-color: rgb(204, 144, 88);
   color: rgb(39, 38, 38);
-  padding: 0.25em;
+  padding: 0.35em;
 }
 
 .headerOption {
@@ -61,6 +61,7 @@
 }
 .headerBasketIcon {
   margin-left: 0.5em;
+  font-size: 1.2rem;
 }
 .headerBasketCount {
   margin-left: 0.6em;
