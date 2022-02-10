@@ -11,7 +11,7 @@ const Subtotal = () => {
         renderText={(value) => (
           <>
             <p className={styles.subtotalTitle}>
-              Subtotal ({cart.products.length} items): <strong> {value}</strong>
+              Subtotal ({cart.products.length } {cart.products.length > 1 ? "items" : "item"} ): <strong> {value}</strong>
             </p>
             <form className={styles.checkoutForm}>
               <div className={styles.formControl}>
