@@ -1,10 +1,32 @@
 import React, { useState } from "react";
 import { ThemeButton } from "../components";
 import styles from "../styles/login.module.css";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../firebase";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const signIn = () => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((loggedUser) => {
+        console.log("logged User", loggedUser);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
+
+  const register = () => {
+    createUserWithEmailAndPassword(auth, email, password).then((loggedUser) => {
+      console.log("Registered User ", loggedUser);
+    });
+  };
+
   return (
     <div className={styles.layout}>
       <img
@@ -29,7 +51,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </form>
-        <ThemeButton type="button" onClick={() => {}}>
+        <ThemeButton type="button" onClick={signIn}>
           Sign In
         </ThemeButton>
         <small>
@@ -39,7 +61,7 @@ const Login = () => {
         </small>
         <ThemeButton
           type="button"
-          onClick={() => {}}
+          onClick={register}
           style={{ backgroundColor: "#EFEFEF" }}
         >
           Create your Amazon account
