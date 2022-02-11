@@ -6,3 +6,7 @@
   width: 100%;
   padding: 4px;
 }
+
+.btn:disabled {
+  opacity: 0.3;
+}

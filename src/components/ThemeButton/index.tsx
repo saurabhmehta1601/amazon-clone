@@ -6,11 +6,18 @@ interface IProps {
   type: "button" | "submit";
   onClick: () => void;
   style?: object;
+  disabled?: boolean;
 }
 
-const ThemeButton = ({ children, type, onClick, style }: IProps) => {
+const ThemeButton = ({ children, type, onClick, style, disabled }: IProps) => {
   return (
-    <button onClick={onClick} type={type} className={styles.btn} style={style}>
+    <button
+      onClick={onClick}
+      type={type}
+      className={styles.btn}
+      style={style}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

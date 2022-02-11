@@ -6,28 +6,38 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebase";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   const signIn = () => {
+    setDisabled(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((loggedUser) => {
         console.log("logged User", loggedUser);
+        router.replace("/");
       })
       .catch((err) => {
         alert(err.message);
+        setDisabled(false);
       });
   };
 
   const register = () => {
+    setDisabled(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((loggedUser) => {
         console.log("Registered User ", loggedUser);
+        router.replace("/");
       })
       .catch((err) => {
         alert(err.message);
+        setDisabled(false);
       });
   };
 
@@ -55,7 +65,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </form>
-        <ThemeButton type="button" onClick={signIn}>
+        <ThemeButton type="button" onClick={signIn} disabled={disabled}>
           Sign In
         </ThemeButton>
         <small>
@@ -67,6 +77,7 @@ const Login = () => {
           type="button"
           onClick={register}
           style={{ backgroundColor: "#EFEFEF" }}
+          disabled={disabled}
         >
           Create your Amazon account
         </ThemeButton>
