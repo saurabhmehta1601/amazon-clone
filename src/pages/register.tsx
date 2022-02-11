@@ -30,7 +30,7 @@ const Register = () => {
         const uid = userCredentials.user.uid;
         const email = userCredentials.user.email;
         // save user to firestore database
-        addDocument("user", { id: uid, email, phone, name });
+        addDocument("user", { email, phone, name }, uid);
         router.replace("/");
       })
       .catch((err) => {
