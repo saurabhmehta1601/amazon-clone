@@ -16,29 +16,41 @@ const Login = () => {
   const [disabled, setDisabled] = useState(false);
 
   const signIn = () => {
-    setDisabled(true);
-    signInWithEmailAndPassword(auth, email, password)
-      .then((loggedUser) => {
-        console.log("logged User", loggedUser);
-        router.replace("/");
-      })
-      .catch((err) => {
-        alert(err.message);
-        setDisabled(false);
-      });
+    if (email.trim() === "") {
+      alert("Please enter email");
+    } else if (password.trim() === "") {
+      alert("Please enter password");
+    } else {
+      setDisabled(true);
+      signInWithEmailAndPassword(auth, email, password)
+        .then((loggedUser) => {
+          console.log("logged User", loggedUser);
+          router.replace("/");
+        })
+        .catch((err) => {
+          alert(err.message);
+          setDisabled(false);
+        });
+    }
   };
 
   const register = () => {
-    setDisabled(true);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((loggedUser) => {
-        console.log("Registered User ", loggedUser);
-        router.replace("/");
-      })
-      .catch((err) => {
-        alert(err.message);
-        setDisabled(false);
-      });
+    if (email.trim() === "") {
+      alert("Please enter email");
+    } else if (password.trim() === "") {
+      alert("Please enter password");
+    } else {
+      setDisabled(true);
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((loggedUser) => {
+          console.log("Registered User ", loggedUser);
+          router.replace("/");
+        })
+        .catch((err) => {
+          alert(err.message);
+          setDisabled(false);
+        });
+    }
   };
 
   return (
@@ -56,6 +68,7 @@ const Login = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required={true}
           />
           <label htmlFor="password">Password</label>
           <input
@@ -63,6 +76,7 @@ const Login = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required={true}
           />
         </form>
         <ThemeButton type="button" onClick={signIn} disabled={disabled}>
