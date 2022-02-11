@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ThemeButton } from "../components";
 import styles from "../styles/authPage.module.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../firebase/firebase";
 import { useRouter } from "next/router";
 import Link from "next/link";
 

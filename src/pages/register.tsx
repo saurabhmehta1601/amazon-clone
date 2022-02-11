@@ -3,8 +3,9 @@ import { ThemeButton } from "../components";
 import styles from "../styles/authPage.module.css";
 import Link from "next/link";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../firebase/firebase";
 import { useRouter } from "next/router";
+import { addDocument } from "../firebase/db/utils";
 
 const Register = () => {
   const router = useRouter();
@@ -27,7 +28,9 @@ const Register = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const uid = userCredentials.user.uid;
-        console.log("userCredentials", userCredentials);
+        const email = userCredentials.user.email;
+        // save user to firestore database
+        addDocument("user", { id: uid, email, phone, name });
         router.replace("/");
       })
       .catch((err) => {
