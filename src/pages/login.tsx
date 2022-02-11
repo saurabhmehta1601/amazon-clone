@@ -22,9 +22,13 @@ const Login = () => {
   };
 
   const register = () => {
-    createUserWithEmailAndPassword(auth, email, password).then((loggedUser) => {
-      console.log("Registered User ", loggedUser);
-    });
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((loggedUser) => {
+        console.log("Registered User ", loggedUser);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
   };
 
   return (
