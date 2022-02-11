@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { ThemeButton } from "../components";
-import styles from "../styles/login.module.css";
-import {
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
+import styles from "../styles/authPage.module.css";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Login = () => {
   const router = useRouter();
@@ -16,34 +14,13 @@ const Login = () => {
   const [disabled, setDisabled] = useState(false);
 
   const signIn = () => {
-    if (email.trim() === "") {
-      alert("Please enter email");
-    } else if (password.trim() === "") {
-      alert("Please enter password");
+    if (email.trim() === "" || password.trim() === "") {
+      alert("Please enter credentials");
     } else {
       setDisabled(true);
       signInWithEmailAndPassword(auth, email, password)
         .then((loggedUser) => {
           console.log("logged User", loggedUser);
-          router.replace("/");
-        })
-        .catch((err) => {
-          alert(err.message);
-          setDisabled(false);
-        });
-    }
-  };
-
-  const register = () => {
-    if (email.trim() === "") {
-      alert("Please enter email");
-    } else if (password.trim() === "") {
-      alert("Please enter password");
-    } else {
-      setDisabled(true);
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((loggedUser) => {
-          console.log("Registered User ", loggedUser);
           router.replace("/");
         })
         .catch((err) => {
@@ -87,14 +64,13 @@ const Login = () => {
           Sale. Please see our Privacy Notice, our Cookies Notice and our
           Interest-Based Ads Notice.
         </small>
-        <ThemeButton
-          type="button"
-          onClick={register}
-          style={{ backgroundColor: "#EFEFEF" }}
-          disabled={disabled}
-        >
-          Create your Amazon account
-        </ThemeButton>
+
+        <small>
+          Don't have an account yet ?{" "}
+          <Link href="/register">
+            <a>create now .</a>
+          </Link>
+        </small>
       </div>
     </div>
   );

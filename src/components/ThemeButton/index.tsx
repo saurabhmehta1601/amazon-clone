@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 interface IProps {
   children: React.ReactChild;
   type: "button" | "submit";
-  onClick: () => void;
+  onClick?: () => void;
   style?: object;
   disabled?: boolean;
 }
