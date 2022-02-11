@@ -11,11 +11,14 @@ const initialState: UserState | null = {
 };
 
 export const userSlice = createSlice({
-  name: "logged user",
+  name: "loggedUser",
   initialState,
   reducers: {
     setUser: (state, action) => {
-      state = action.payload;
+      console.log("action is ", action);
+      const { email, uid } = action.payload;
+      state.email = email;
+      state.uid = uid;
     },
   },
 });
