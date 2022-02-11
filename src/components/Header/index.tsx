@@ -14,6 +14,7 @@ const Header = () => {
     router.push("/");
   };
   const cart = useAppSelector((state) => state.cart);
+  const user = useAppSelector((state) => state.user);
   return (
     <div className={styles.header}>
       {/* Logo */}
@@ -34,7 +35,9 @@ const Header = () => {
       <div className={styles.headerNav}>
         <div className={styles.headerOption}>
           <span className={styles.headerOptionLineOne}>Hello</span>
-          <span className={styles.headerOptionLineTwo}>Sign In</span>
+          <span className={styles.headerOptionLineTwo}>
+            {user?.email || "Sign In"}
+          </span>
         </div>
         <div className={styles.headerOption}>
           <span className={styles.headerOptionLineOne}>Returns</span>
