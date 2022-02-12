@@ -18,3 +18,16 @@ export const addDocument = async (
     console.error("Error adding document: ", e);
   }
 };
+
+export const getDocument = async (collectionName, id) => {
+  try {
+    const docSnap = await getDoc(doc(db, collectionName, id));
+    if (docSnap.exists()) {
+      return docSnap.data();
+    } else {
+      console.error("No document found .");
+    }
+  } catch (err) {
+    console.error("Error getting document .");
+  }
+};

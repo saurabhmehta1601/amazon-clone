@@ -9,14 +9,8 @@ const index = ({ children }) => {
   useEffect(() => {
     const unlisten = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // set logged user in redux state
-        console.log("user is ", user);
-        console.log("user uid is ", user.uid);
-        console.log("user email is ", user.email);
         dispatch(setUser({ uid: user.uid, email: user.email }));
       } else {
-        // set user to be null
-        console.log("user is null");
         setUser(null);
       }
     });
