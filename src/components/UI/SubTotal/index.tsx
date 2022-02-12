@@ -1,10 +1,16 @@
 import React from "react";
 import CurrencyFormat from "react-currency-format";
 import { useAppSelector } from "../../../hooks/redux";
+import ThemeButton from "../ThemeButton";
 import styles from "./styles.module.css";
+import { useRouter } from "next/router";
 
 const Subtotal = () => {
+  const router = useRouter();
   const cart = useAppSelector((state) => state.cart);
+  const navigateToPayment = () => {
+    router.push("/payment");
+  };
   return (
     <div className={styles.checkoutTotal}>
       <CurrencyFormat
@@ -20,7 +26,9 @@ const Subtotal = () => {
                 <input type="checkbox" name="containsGift" />
                 <label htmlFor="">This order contains a gift</label>
               </div>
-              <button type="submit">Proceed to checkout</button>
+              <ThemeButton type="button" onClick={navigateToPayment}>
+                Proceed to checkout
+              </ThemeButton>
             </form>
           </>
         )}
