@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
-import { useAppSelector } from "../../hooks/redux";
+import { useAppSelector } from "../../../hooks/redux";
 import { useRouter } from "next/router";
 
 const Header = () => {

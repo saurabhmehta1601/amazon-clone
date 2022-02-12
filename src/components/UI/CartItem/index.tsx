@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./styles.module.css";
 import { IProduct } from "../Product";
 import ThemeButton from "../ThemeButton";
-import { useAppDispatch } from "../../hooks/redux";
-import { removeFromCart } from "../../redux/features/ShoppingCart/cartSlice";
+import { useAppDispatch } from "../../../hooks/redux";
+import { removeFromCart } from "../../../redux/features/ShoppingCart/cartSlice";
 
 const CartItem = ({ id, title, price, image_url, rating }: IProduct) => {
   const dispatch = useAppDispatch();

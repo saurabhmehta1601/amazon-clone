@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import styles from "./styles.module.css";
-import { addToCart } from "../../redux/features/ShoppingCart/cartSlice";
+import { addToCart } from "../../../redux/features/ShoppingCart/cartSlice";
 
 export interface IProduct {
   id: string;
