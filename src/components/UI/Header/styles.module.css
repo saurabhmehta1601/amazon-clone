@@ -75,3 +75,14 @@
 .headerOptionBasket:hover {
   cursor: pointer;
 }
+
+.verifyEmail {
+  background-color: rgb(34, 34, 34);
+  padding: 0.2em 1em;
+  color: rgb(145, 143, 143);
+  font-size: 0.8rem;
+}
+.verifyEmail span {
+  color: rgb(8, 66, 189);
+  cursor: pointer;
+}
