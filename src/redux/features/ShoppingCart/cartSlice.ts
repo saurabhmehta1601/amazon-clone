@@ -24,7 +24,8 @@ export const counterSlice = createSlice({
     },
     removeFromCart: (state, action) => {
       const id = action.payload;
-      state.products = state.products.filter((p) => p.id !== id);
+      const productIdx = state.products.findIndex((p) => p.id === id);
+      state.products.splice(id, 1);
     },
   },
 });
