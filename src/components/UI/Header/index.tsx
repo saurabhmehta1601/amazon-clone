@@ -15,6 +15,11 @@ const Header = () => {
   };
   const cart = useAppSelector((state) => state.cart);
   const user = useAppSelector((state) => state.user);
+  const navigateToProfile = () => {
+    if (user.uid) {
+      router.push(`/profile/${user.uid}`);
+    }
+  };
   return (
     <div className={styles.header}>
       {/* Logo */}
@@ -33,7 +38,7 @@ const Header = () => {
       </div>
       {/* Navigation */}
       <div className={styles.headerNav}>
-        <div className={styles.headerOption}>
+        <div className={styles.headerOption} onClick={navigateToProfile}>
           <span className={styles.headerOptionLineOne}>Hello</span>
           <span className={styles.headerOptionLineTwo}>
             {user?.email || "Sign In"}
