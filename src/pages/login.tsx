@@ -66,7 +66,7 @@ const Login = () => {
         </small>
 
         <small>
-          Don't have an account yet ?{" "}
+          Don&apos; t have an account yet ?
           <Link href="/register">
             <a>create now .</a>
           </Link>

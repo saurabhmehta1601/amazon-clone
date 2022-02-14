@@ -4,7 +4,7 @@ import { auth } from "../../firebase/firebase";
 import { useAppDispatch } from "../../hooks/redux";
 import { setUser } from "../../redux/features/LoggedUser/userSlice";
 
-const index = ({ children }) => {
+const UserProvider = ({ children }) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     const unlisten = onAuthStateChanged(auth, (user) => {
@@ -19,4 +19,4 @@ const index = ({ children }) => {
   return <>{children}</>;
 };
 
-export default index;
+export default UserProvider;
