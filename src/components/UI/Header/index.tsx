@@ -16,7 +16,7 @@ const Header = () => {
   const router = useRouter();
 
   const navigateToCheckout = () => {
-    router.push("/checkout");
+    router.push("/reviewCart");
   };
   const navigateToHome = () => {
     router.push("/");

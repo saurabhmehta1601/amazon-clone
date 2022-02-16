@@ -71,7 +71,7 @@ function PaymentPage() {
     <div className={styles.payment}>
       <h1>
         Checkout (
-        <Link href="/checkout">
+        <Link href="/reviewCart">
           <a>{products?.length || 0} items </a>
         </Link>
         )
