@@ -68,7 +68,7 @@ const Login = () => {
         <small>
           Don&apos; t have an account yet ?
           <Link href="/register">
-            <a>create now .</a>
+            <a> create now .</a>
           </Link>
         </small>
       </div>

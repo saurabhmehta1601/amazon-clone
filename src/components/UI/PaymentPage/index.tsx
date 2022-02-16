@@ -8,6 +8,7 @@ import styles from "./styles.module.css";
 import CurrencyFormat from "react-currency-format";
 import { emptyProducts } from "../../../redux/features/ShoppingCart/cartSlice";
 import { useRouter } from "next/router";
+import ThemeButton from "../ThemeButton";
 
 const getProductsTotalPrice = (products) => {
   return products.reduce((acc, prod) => acc + prod.price, 0);
@@ -79,7 +80,7 @@ function PaymentPage() {
         {/* delivery address */}
         <section>
           <h3>Delivery Address</h3>
-          <p> Malviya Nagar ,Jaipur , Rajasthan </p>
+          <p> {user.address} </p>
         </section>
         {/* payment products*/}
         <section>
@@ -113,13 +114,25 @@ function PaymentPage() {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
-                <button disabled={processing || disabled || succeeded}>
-                  <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
-                </button>
+                {processing ? (
+                  <p>Processing</p>
+                ) : (
+                  <ThemeButton
+                    style={{
+                      margin: "1em 0",
+                      padding: "0.4em ",
+                      width: "fit-content",
+                    }}
+                    disabled={processing || disabled || succeeded}
+                    type="submit"
+                  >
+                    Buy Now
+                  </ThemeButton>
+                )}
               </div>
 
               {/* Errors */}
-              {error && <div>{error}</div>}
+              {error && <small className={styles.errorMsg}>* {error}</small>}
             </form>
           </div>
         </section>

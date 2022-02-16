@@ -20,3 +20,10 @@
   flex: 0.2;
 }
 
+.priceContainer {
+  padding: 0.7em 0;
+}
+
+.errorMsg {
+  color: red;
+}

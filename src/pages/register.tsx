@@ -17,6 +17,7 @@ const Register = () => {
     const password = e.target["password"].value;
     const confirm_password = e.target["confirm_password"].value;
     const phone = e.target["phone"].value;
+    const address = e.target["address"].value;
 
     if (password != confirm_password) {
       alert("Passwords do not match . Please check again .");
@@ -30,7 +31,7 @@ const Register = () => {
         const uid = userCredentials.user.uid;
         const email = userCredentials.user.email;
         // save user to firestore database
-        addDocument("user", { email, phone, name }, uid);
+        addDocument("user", { email, phone, name, address }, uid);
         router.replace("/");
       })
       .catch((err) => {
@@ -62,6 +63,9 @@ const Register = () => {
           {/* Email */}
           <label htmlFor="email">Email</label>
           <input type="email" id="email" required={true} />
+          {/* Address */}
+          <label htmlFor="address">Address </label>
+          <input type="text" id="address" required={true} />
           {/* Password */}
           <label htmlFor="password">Password (min 8 characters long) </label>
           <input minLength={8} type="password" id="password" required={true} />

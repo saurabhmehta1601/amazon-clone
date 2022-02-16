@@ -3,21 +3,23 @@ import { createSlice } from "@reduxjs/toolkit";
 export interface UserState {
   uid: string;
   email: string;
+  address: string;
+  phone: string;
 }
 
 const initialState: UserState | null = {
   uid: "",
   email: "",
+  address: "",
+  phone: "",
 };
 
 export const userSlice = createSlice({
   name: "loggedUser",
   initialState,
   reducers: {
-    setUser: (state, action) => {
-      console.log("action is ", action);
-      if (typeof action.payload === "object") return { ...action.payload };
-      if (action.payload === null) return null;
+    setUser: (_, action) => {
+      return action.payload;
     },
   },
 });
