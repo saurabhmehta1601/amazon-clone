@@ -31,7 +31,9 @@ function PaymentPage() {
     const getClientSecret = async () => {
       const res = await axios({
         method: "POST",
-        url: `/payments/create?total=${getProductsTotalPrice(products) * 100}`,
+        url: `/api/payments/create?total=${
+          getProductsTotalPrice(products) * 100
+        }`,
       });
       setClientSecret(res.data.clientSecret);
     };
