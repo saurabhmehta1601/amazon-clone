@@ -27,10 +27,14 @@ export const counterSlice = createSlice({
       const productIdx = state.products.findIndex((p) => p.id === id);
       state.products.splice(id, 1);
     },
+    emptyProducts: (state) => {
+      state.products = [];
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart, removeFromCart } = counterSlice.actions;
+export const { addToCart, removeFromCart, emptyProducts } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;

@@ -31,3 +31,17 @@ export const getDocument = async (collectionName, id) => {
     console.error("Error getting document .");
   }
 };
+
+export const mergeDocWithGivenId = async (
+  collectionName,
+  id: string,
+  data: object
+) => {
+  try {
+    const docRef = doc(db, collectionName, id);
+    await setDoc(docRef, data, { merge: true });
+    console.log("Document data merged ");
+  } catch (error) {
+    alert(error.message);
+  }
+};
