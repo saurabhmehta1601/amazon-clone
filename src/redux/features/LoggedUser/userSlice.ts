@@ -5,6 +5,7 @@ export interface UserState {
   email: string;
   address: string;
   phone: string;
+  name: string;
 }
 
 const initialState: UserState | null = {
@@ -12,6 +13,7 @@ const initialState: UserState | null = {
   email: "",
   address: "",
   phone: "",
+  name: "",
 };
 
 export const userSlice = createSlice({

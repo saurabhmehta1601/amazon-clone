@@ -35,6 +35,11 @@ function PaymentPage() {
         url: `/api/payments/create?total=${
           getProductsTotalPrice(products) * 100
         }`,
+        data: {
+          email: user.email,
+          address: user.address,
+          name: user.name,
+        },
       });
       setClientSecret(res.data.clientSecret);
     };
@@ -45,7 +50,7 @@ function PaymentPage() {
     e.preventDefault();
     setProcessing(true);
 
-    const payload = await stripe
+    await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
@@ -54,6 +59,7 @@ function PaymentPage() {
       .then((paymentIntent) => {
         // for payment confirmation
         // add order to database
+        console.log("PAYMENT INTENT", paymentIntent);
         setSucceeded(true);
         setError(null);
         setProcessing(false);

@@ -1,8 +1,7 @@
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import Link from "next/link";
 import React from "react";
-import { CartItem, Header } from "../components";
+import { Header } from "../components";
 import PaymentPage from "../components/UI/PaymentPage";
 
 const stripePromise = loadStripe(

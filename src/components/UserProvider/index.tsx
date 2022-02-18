@@ -10,8 +10,10 @@ const UserProvider = ({ children }) => {
   useEffect(() => {
     const unlisten = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        const { address, phone } = await getDocument("user", user.uid);
-        dispatch(setUser({ uid: user.uid, email: user.email, address, phone }));
+        const { phone, address, name } = await getDocument("user", user.uid);
+        dispatch(
+          setUser({ uid: user.uid, email: user.email, address, phone, name })
+        );
       } else {
         setUser(null);
       }
