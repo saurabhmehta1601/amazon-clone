@@ -1,8 +1,5 @@
 module.exports = {
-  reactStrictMode: true,
   images: {
-    loader: "imgix",
-    path: "https://clone-79709.web.app/",
-    domains: ["m.media-amazon.com"],
+    domains: ["images.pexels.com", "images-na.ssl-images-amazon.com"],
   },
 };
