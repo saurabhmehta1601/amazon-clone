@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 
 const Login = () => {
   const router = useRouter();
