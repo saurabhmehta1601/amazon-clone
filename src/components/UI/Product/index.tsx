@@ -4,6 +4,7 @@ import styles from "./styles.module.css";
 import { addToCart } from "../../../redux/features/ShoppingCart/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "next/image";
 
 export interface IProduct {
   id: string;
@@ -36,7 +37,7 @@ const Product = ({ id, title, price, image_url, rating }: IProduct) => {
               ))}
           </div>
         </div>
-        <img src={image_url} alt={title} />
+        <Image src={image_url} width="100" height="150" alt={title} />
         <button onClick={addProductToCart}>Add to Cart</button>
       </div>
       <ToastContainer />

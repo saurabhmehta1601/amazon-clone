@@ -16,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
         setLoading(false);
       }
     });
-  }, []);
+  }, [router]);
 
   return <>{!loading && children}</>;
 };

@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { useRouter } from "next/router";
 import { addDocument } from "../firebase/db/utils";
+import Image from "next/image";
 
 const Register = () => {
   const router = useRouter();

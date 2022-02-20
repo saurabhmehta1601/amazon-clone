@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/checkout.module.css";
 import { useAppSelector } from "../hooks/redux";
 import { Header, CartItem, SubTotal } from "../components";
+import Image from "next/image";
 
 const Checkout = () => {
   const cart = useAppSelector((state) => state.cart);
