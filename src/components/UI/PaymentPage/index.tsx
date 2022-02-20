@@ -44,7 +44,7 @@ function PaymentPage() {
       setClientSecret(res.data.clientSecret);
     };
     getClientSecret();
-  }, [products]);
+  }, [products, user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
