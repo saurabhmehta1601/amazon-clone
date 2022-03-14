@@ -9,13 +9,30 @@ const UserProvider = ({ children }) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     const unlisten = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        const { phone, address, name } = await getDocument("user", user.uid);
-        dispatch(
-          setUser({ uid: user.uid, email: user.email, address, phone, name })
-        );
-      } else {
-        setUser(null);
+      try {
+        setUserInState();
+      } catch (error) {
+        alert(error.message);
+      }
+
+      async function setUserInState() {
+        if (user) {
+          const userDoc = await getDocument("user", user.uid);
+          if (userDoc) {
+            const { phone, address, name } = userDoc;
+            dispatch(
+              setUser({
+                uid: user.uid,
+                email: user.email,
+                address,
+                phone,
+                name,
+              })
+            );
+          }
+        } else {
+          setUser(null);
+        }
       }
     });
     return () => unlisten();
