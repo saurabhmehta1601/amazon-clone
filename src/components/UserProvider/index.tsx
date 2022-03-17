@@ -11,6 +11,7 @@ const UserProvider = ({ children }) => {
     const unlisten = onAuthStateChanged(auth, async (user) => {
       try {
         setUserInState();
+        console.log(user);
       } catch (error) {
         alert(error.message);
       }
@@ -29,6 +30,8 @@ const UserProvider = ({ children }) => {
                 name,
               })
             );
+          } else {
+            setUser({ uid: user.uid, email: user.email });
           }
         } else {
           setUser(null);
