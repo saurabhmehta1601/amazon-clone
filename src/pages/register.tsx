@@ -6,11 +6,12 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { useRouter } from "next/router";
 import { addDocument } from "../firebase/db/utils";
-import Image from "next/image";
+import { useAppSelector } from "../hooks/redux";
 
 const Register = () => {
   const router = useRouter();
   const [disabled, setDisabled] = useState(false);
+  const user = useAppSelector((state) => state.user);
   const handleFormSubmission = (e) => {
     e.preventDefault();
     const email = e.target["email"].value;
@@ -40,7 +41,9 @@ const Register = () => {
         setDisabled(false);
       });
   };
-
+  if (user.uid) {
+    router.replace("/");
+  }
   return (
     <div className={styles.layout}>
       <img

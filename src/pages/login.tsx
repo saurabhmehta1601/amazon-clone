@@ -5,14 +5,19 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Image from "next/image";
+import { useAppSelector } from "../hooks/redux";
 
 const Login = () => {
   const router = useRouter();
-
+  const user = useAppSelector((state) => state.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [disabled, setDisabled] = useState(false);
+
+  if (user.uid) {
+    // redirect to homepage
+    router.replace("/");
+  }
 
   const signIn = () => {
     if (email.trim() === "" || password.trim() === "") {
