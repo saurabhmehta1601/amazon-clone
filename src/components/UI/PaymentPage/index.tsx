@@ -9,6 +9,8 @@ import CurrencyFormat from "react-currency-format";
 import { emptyProducts } from "../../../redux/features/ShoppingCart/cartSlice";
 import { useRouter } from "next/router";
 import ThemeButton from "../ThemeButton";
+import Lottie from "react-lottie";
+import paymentSuccessAnimationData from "../../../lottie/payment-success.json";
 
 const getProductsTotalPrice = (products) => {
   return products.reduce((acc, prod) => acc + prod.price, 0);
@@ -16,9 +18,9 @@ const getProductsTotalPrice = (products) => {
 
 function PaymentPage() {
   const { products } = useAppSelector((state) => state.cart);
+  const user = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const user = useAppSelector((state) => state.user);
   const stripe = useStripe();
   const elements = useElements();
   const [succeeded, setSucceeded] = useState(false);
@@ -59,12 +61,10 @@ function PaymentPage() {
       .then((paymentIntent) => {
         // for payment confirmation
         // add order to database
-        console.log("PAYMENT INTENT", paymentIntent);
         setSucceeded(true);
         setError(null);
         setProcessing(false);
         dispatch(emptyProducts);
-        router.replace("/orders");
       });
   };
 
@@ -72,6 +72,32 @@ function PaymentPage() {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };
+
+  if (succeeded) {
+    const defaultOptions = {
+      loop: false,
+      autoplay: true,
+      animationData: paymentSuccessAnimationData,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    };
+    return (
+      <Lottie
+        eventListeners={[
+          {
+            eventName: "complete",
+            callback: () => {
+              router.replace("/");
+            },
+          },
+        ]}
+        options={defaultOptions}
+        height={400}
+        width={400}
+      />
+    );
+  }
 
   return (
     <div className={styles.payment}>

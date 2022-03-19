@@ -8,7 +8,6 @@ export default async function handler(
   if (req.method === "POST") {
     // @ts-ignore
     const total = req.query.total;
-    console.log("Payment recieved for amount", total);
 
     const { email, address, name } = req.body;
 
