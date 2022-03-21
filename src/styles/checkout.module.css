@@ -14,3 +14,14 @@
   border-bottom: 1px solid lightgray;
   padding-bottom: 0.34em;
 }
+
+.empty_cart {
+  padding: 2em;
+  display: grid;
+  place-items: center;
+}
+
+.empty_cart > h3 {
+  margin-top: 1rem;
+  text-indent: 2rem;
+}
