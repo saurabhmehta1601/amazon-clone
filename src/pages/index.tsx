@@ -18,48 +18,54 @@ export default function Home() {
             <Product
               id="12sxrun1"
               rating={4}
-              title="HP Pavilion Full touch 512SSD 16GB RAM "
-              price={25}
-              image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+              title="Cera Moisturizing Cream"
+              img_width={150}
+              img_height={175}
+              price={5}
+              image_url="https://m.media-amazon.com/images/I/61S7BrCBj7L._AC_SY400_.jpg"
             />
             <Product
               id="12csdak1"
-              rating={2}
-              title="SAMSUNG Galaxy s5"
-              price={10}
-              image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+              rating={5}
+              title="IPhone 13"
+              img_width={150}
+              img_height={175}
+              price={1000}
+              image_url="https://m.media-amazon.com/images/I/81LmL94PUvS._AC_SY400_.jpg"
             />
           </div>
           <div className={styles.productRow}>
             <Product
               id="3441"
               rating={3}
-              title="SAMSUNG Galaxy s5"
-              price={2}
-              image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+              title="Oculus VR headset"
+              price={50}
+              image_url="https://m.media-amazon.com/images/I/61kwRNPtMpL._AC_SY400_.jpg"
             />
             <Product
               id="31"
-              rating={1}
-              title="SAMSUNG Galaxy s5"
-              price={12}
-              image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+              rating={5}
+              title="OnePlus Earbuds"
+              price={200}
+              image_url="https://m.media-amazon.com/images/I/61m9BxTyCGL._AC_SY400_.jpg"
             />
             <Product
               id="41"
-              rating={5}
-              title="SAMSUNG Galaxy s5"
+              rating={3}
+              title="Phillips Men's Trimmer"
               price={22}
-              image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+              image_url="https://m.media-amazon.com/images/I/71YCllvavVL._AC_SY400_.jpg"
             />
           </div>
           <div className={styles.productRow}>
             <Product
               id="3"
+              img_width={500}
+              img_height={200}
               rating={3}
-              title="SAMSUNG Galaxy s5"
-              price={22}
-              image_url="https://images.pexels.com/photos/4065899/pexels-photo-4065899.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=250"
+              title="56 inch LED TED LASSO"
+              price={15}
+              image_url="https://m.media-amazon.com/images/I/51EPd38RHQL._AC_SX679_.jpg"
             />
           </div>
         </div>

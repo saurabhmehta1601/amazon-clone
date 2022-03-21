@@ -12,9 +12,19 @@ export interface IProduct {
   price: number;
   image_url: string;
   rating: number;
+  img_width?: number;
+  img_height?: number;
 }
 
-const Product = ({ id, title, price, image_url, rating }: IProduct) => {
+const Product = ({
+  id,
+  title,
+  price,
+  image_url,
+  rating,
+  img_height,
+  img_width,
+}: IProduct) => {
   const dispatch = useDispatch();
   const addProductToCart = () => {
     dispatch(addToCart({ id, title, price, image_url, rating }));
@@ -37,7 +47,12 @@ const Product = ({ id, title, price, image_url, rating }: IProduct) => {
               ))}
           </div>
         </div>
-        <Image src={image_url} width="100" height="150" alt={title} />
+        <Image
+          src={image_url}
+          width={img_width ? img_width : "100"}
+          height={img_height ? img_height : "150"}
+          alt={title}
+        />
         <button onClick={addProductToCart}>Add to Cart</button>
       </div>
       <ToastContainer />

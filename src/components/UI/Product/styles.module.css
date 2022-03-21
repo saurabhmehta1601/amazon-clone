@@ -5,15 +5,15 @@
   z-index: 1;
   margin: 12px;
   align-items: center;
-  justify-content: flex-end;
   padding: 1em;
   margin: 0.2em;
   max-height: 400px;
   flex: 1;
+  row-gap: 1rem;
 }
 
 .productInfo {
-  padding-bottom: 3em;
+  padding-bottom: 2em;
   width: 100%;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .product > img {
-  max-height: 200px;
+  max-height: 250px;
   width: 100%;
   object-fit: contain;
 }
@@ -30,7 +30,6 @@
 .product > button {
   background-color: #f0c14b;
   border: 1px solid;
-  margin-top: 1em;
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
 }
