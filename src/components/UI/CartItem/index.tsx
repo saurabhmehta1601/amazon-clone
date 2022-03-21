@@ -6,6 +6,7 @@ import { useAppDispatch } from "../../../hooks/redux";
 import { removeFromCart } from "../../../redux/features/ShoppingCart/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "next/image";
 
 const CartItem = ({ id, title, price, image_url, rating }: IProduct) => {
   const dispatch = useAppDispatch();
@@ -16,7 +17,12 @@ const CartItem = ({ id, title, price, image_url, rating }: IProduct) => {
   return (
     <>
       <div className={styles.product}>
-        <img src={image_url} alt={title} />
+        <Image
+          width={120}
+          height={100}
+          src={image_url}
+          alt={title}
+        />
         <div className={styles.info}>
           <h5 className={styles.productTitle}>{title}</h5>
           <p>
