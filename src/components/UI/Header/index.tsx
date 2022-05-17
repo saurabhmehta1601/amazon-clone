@@ -3,27 +3,17 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
-import { useRouter } from "next/router";
 import { logoutUser } from "../../../firebase/auth/utils";
 import { setUser } from "../../../redux/features/LoggedUser/userSlice";
 import { sendEmailVerification } from "firebase/auth";
 import { auth } from "../../../firebase/firebase";
+import Link from "next/link";
 
 const Header = () => {
   const cart = useAppSelector((state) => state.cart);
   const user = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
-  const router = useRouter();
 
-  const navigateToCheckout = () => {
-    router.push("/reviewCart");
-  };
-  const navigateToHome = () => {
-    router.push("/");
-  };
-  const navigateToLogin = () => {
-    router.push("/login");
-  };
   const signOutUser = () => {
     logoutUser().then(() => {
       dispatch(setUser(null));
@@ -42,14 +32,15 @@ const Header = () => {
     <>
       <div className={styles.header}>
         {/* Logo */}
-        <Image
-          onClick={navigateToHome}
-          className={styles.headerLogo}
-          src="/logo.svg"
-          alt="amazon-logo"
-          height="35"
-          width="35"
-        />
+        <Link href="/">
+          <Image
+            className={styles.headerLogo}
+            src="/logo.svg"
+            alt="amazon-logo"
+            height="35"
+            width="35"
+          />
+        </Link>
         {/* Search */}
         <div className={styles.headerSearch}>
           <input className={styles.headerSearchInput} type="text" />
@@ -65,27 +56,32 @@ const Header = () => {
               {user?.email ? (
                 <span onClick={signOutUser}>Sign Out</span>
               ) : (
-                <span onClick={navigateToLogin}>Sign In</span>
+                <Link href="/login">
+                  <span>Sign In</span>
+                </Link>
               )}
             </span>
           </div>
-          <div className={styles.headerOption}>
-            <span className={styles.headerOptionLineOne}>Returns</span>
-            <span className={styles.headerOptionLineTwo}>& Orders</span>
-          </div>
-          <div className={styles.headerOption}>
-            <span className={styles.headerOptionLineOne}>Your</span>
-            <span className={styles.headerOptionLineTwo}>Prime</span>
-          </div>
-          <div
-            className={styles.headerOptionBasket}
-            onClick={navigateToCheckout}
-          >
-            <FaShoppingCart className={styles.headerBasketIcon} />
-            <span className={styles.headerBasketCount}>
-              {cart.products.length}
-            </span>
-          </div>
+          <Link href="/orders">
+            <div className={styles.headerOption}>
+              <span className={styles.headerOptionLineOne}>Returns</span>
+              <span className={styles.headerOptionLineTwo}>& Orders</span>
+            </div>
+          </Link>
+          <Link href="/">
+            <div className={styles.headerOption}>
+              <span className={styles.headerOptionLineOne}>Your</span>
+              <span className={styles.headerOptionLineTwo}>Prime</span>
+            </div>
+          </Link>
+          <Link href="/reviewCart">
+            <div className={styles.headerOptionBasket}>
+              <FaShoppingCart className={styles.headerBasketIcon} />
+              <span className={styles.headerBasketCount}>
+                {cart.products.length}
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
       {auth.currentUser && !auth.currentUser.emailVerified && (
