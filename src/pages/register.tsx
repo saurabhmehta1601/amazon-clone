@@ -19,7 +19,13 @@ const Register = () => {
     const password = e.target["password"].value;
     const confirm_password = e.target["confirm_password"].value;
     const phone = e.target["phone"].value;
-    const address = e.target["address"].value;
+    const address = {
+      line1: e.target["line1"].value,
+      postal_code: e.target["postal_code"].value,
+      city: e.target["city"].value,
+      state: e.target["state"].value,
+      country: e.target["country"].value,
+    };
 
     if (password != confirm_password) {
       alert("Passwords do not match . Please check again .");
@@ -67,9 +73,21 @@ const Register = () => {
           {/* Email */}
           <label htmlFor="email">Email</label>
           <input type="email" id="email" required={true} />
-          {/* Address */}
-          <label htmlFor="address">Address </label>
-          <input type="text" id="address" required={true} />
+          {/* Line 1 */}
+          <label htmlFor="line1">House Address</label>
+          <input type="text" id="line1" required={true} />
+          {/* Postal Code */}
+          <label htmlFor="postal_code ">Postal Code </label>
+          <input type="number" id="postal_code" required={true} />
+          {/* City */}
+          <label htmlFor="city">City </label>
+          <input type="text" id="city" required={true} />
+          {/* State */}
+          <label htmlFor="state">State</label>
+          <input type="text" id="state" required={true} />
+          {/* Country */}
+          <label htmlFor="country">Country</label>
+          <input type="text" id="country" required={true} />
           {/* Password */}
           <label htmlFor="password">Password (min 8 characters long) </label>
           <input minLength={8} type="password" id="password" required={true} />

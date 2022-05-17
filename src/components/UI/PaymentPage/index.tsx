@@ -112,7 +112,10 @@ function PaymentPage() {
         {/* delivery address */}
         <section>
           <h3>Delivery Address</h3>
-          <p> {user.address} </p>
+          <p>
+            {user.address.line1} , {user.address.city} , {user.address.state} ,
+            {user.address.country}
+          </p>
         </section>
         {/* payment products*/}
         <section>
